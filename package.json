@@ -26,11 +26,12 @@
     "url": "https://github.com/holgiosalos/protractor-workshop-2017/issues"
   },
   "homepage": "https://github.com/holgiosalos/protractor-workshop-2017#readme",
-  "dependencies": {},
+  "dependencies": {
+    "protractor": "^5.1.2"
+  },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.3",
     "jasmine-spec-reporter": "^4.2.1",
-    "protractor": "^5.1.2",
     "typescript": "^2.5.3"
   }
 }
