@@ -16,4 +16,4 @@ export const config: Config = {
       args: ['--headless', '--disable-gpu', '--window-size=800,600']
     }
   }
-}
+};
