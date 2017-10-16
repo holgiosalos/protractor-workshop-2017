@@ -4,6 +4,7 @@ describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
   const productList: ProductListPage = new ProductListPage();
   const productDetail: ProductDetailPage = new ProductDetailPage();
+  const productAddedModal: ProductAddedModalPage = new ProductAddedModalPage();
 
   beforeEach(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
@@ -18,7 +19,7 @@ describe('Buy a t-shirt', () => {
     await (browser.sleep(3000));
     await productDetail.addToCart();
     await (browser.sleep(3000));
-    await $('[style*="display: block;"] .button-container > a').click();
+    await productAddedModal.proceedToCheckout();
     await (browser.sleep(3000));
     await $('.cart_navigation span').click();
     await (browser.sleep(3000));
