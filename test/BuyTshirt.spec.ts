@@ -6,6 +6,7 @@ describe('Buy a t-shirt', () => {
   const productDetail: ProductDetailPage = new ProductDetailPage();
   const productAddedModal: ProductAddedModalPage = new ProductAddedModalPage();
   const summaryStep: SummaryStepPage = new SummaryStepPage();
+  const signInStep: SignInStepPage = new SignInStepPage();
 
   beforeEach(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
@@ -25,9 +26,7 @@ describe('Buy a t-shirt', () => {
     await summaryStep.proceedToCheckout();
     await (browser.sleep(3000));
 
-    await $('#email').sendKeys('aperdomobo@gmail.com');
-    await $('#passwd').sendKeys('WorkshopProtractor');
-    await $('#SubmitLogin > span').click();
+    await signInStep.login('aperdomobo@gmail.com', 'WorkshopProtractor');
     await (browser.sleep(3000));
 
     await $('#center_column > form > p > button > span').click();
