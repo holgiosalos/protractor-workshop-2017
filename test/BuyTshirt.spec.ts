@@ -9,6 +9,7 @@ describe('Buy a t-shirt', () => {
   const signInStep: SignInStepPage = new SignInStepPage();
   const addressStep: AddressStepPage = new AddressStepPage();
   const shippingStep: ShippingStepPage = new ShippingStepPage();
+  const paymentStep: PaymentStepPage = new PaymentStepPage();
 
   beforeEach(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
@@ -39,7 +40,7 @@ describe('Buy a t-shirt', () => {
 
     await shippingStep.proceedToCheckout();
     await (browser.sleep(3000));
-    await $('#HOOK_PAYMENT > div:nth-child(1) > div > p > a').click();
+    await paymentStep.payByBankWire();
     await (browser.sleep(3000));
     await $('#cart_navigation > button > span').click();
     await (browser.sleep(3000));
