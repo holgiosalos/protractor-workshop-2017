@@ -1,4 +1,4 @@
-import { $, ElementFinder, promise } from 'protractor';
+import { $, ElementFinder } from 'protractor';
 
 export class ShippingStepPage {
   private get termsOfServiceCheckbox(): ElementFinder {
@@ -9,11 +9,8 @@ export class ShippingStepPage {
     return $('#form > p > button > span');
   }
 
-  public agreeTOS(): promise.Promise<void> {
-    return this.termsOfServiceCheckbox.click();
-  }
-
-  public proceedToCheckout(): promise.Promise<void> {
-    return this.checkoutButton.click();
+  public async agreeTOSAndProceedToCheckout(): Promise<void> {
+    await this.termsOfServiceCheckbox.click();
+    await this.checkoutButton.click();
   }
 }

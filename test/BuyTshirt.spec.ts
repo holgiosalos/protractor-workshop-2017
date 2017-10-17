@@ -1,7 +1,17 @@
 import { browser } from 'protractor';
-import { MenuContentPage, ProductListPage, ProductDetailPage, ProductAddedModalPage,
-  SummaryStepPage, SignInStepPage, AddressStepPage, ShippingStepPage, PaymentStepPage,
-  BankPaymentPage, OrderResumePage } from '../src/page';
+import {
+  MenuContentPage,
+  ProductListPage,
+  ProductDetailPage,
+  ProductAddedModalPage,
+  SummaryStepPage,
+  SignInStepPage,
+  AddressStepPage,
+  ShippingStepPage,
+  PaymentStepPage,
+  BankPaymentPage,
+  OrderResumePage
+} from '../src/page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -40,10 +50,7 @@ describe('Buy a t-shirt', () => {
     await addressStep.proceedToCheckout();
     await (browser.sleep(3000));
 
-    await shippingStep.agreeTOS();
-    await (browser.sleep(3000));
-
-    await shippingStep.proceedToCheckout();
+    await shippingStep.agreeTOSAndProceedToCheckout();
     await (browser.sleep(3000));
     await paymentStep.payByBankWire();
     await (browser.sleep(3000));
