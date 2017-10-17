@@ -11,6 +11,7 @@ describe('Buy a t-shirt', () => {
   const shippingStep: ShippingStepPage = new ShippingStepPage();
   const paymentStep: PaymentStepPage = new PaymentStepPage();
   const bankPayment: BankPaymentPage = new BankPaymentPage();
+  const orderResume: OrderResumePage = new OrderResumePage();
 
   beforeEach(() => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
@@ -46,7 +47,6 @@ describe('Buy a t-shirt', () => {
     await bankPayment.confirmOrder();
     await (browser.sleep(3000));
 
-    await expect($('#center_column > div > p > strong').getText())
-      .toBe('Your order on My Store is complete.');
+    await expect(orderResume.getPayoutResultTitle()).toBe('Your order on My Store is complete.');
   });
 });
