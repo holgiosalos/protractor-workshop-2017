@@ -1,4 +1,7 @@
-import { $, browser } from 'protractor';
+import { browser } from 'protractor';
+import { MenuContentPage, ProductListPage, ProductDetailPage, ProductAddedModalPage,
+  SummaryStepPage, SignInStepPage, AddressStepPage, ShippingStepPage, PaymentStepPage,
+  BankPaymentPage, OrderResumePage } from '../src/page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
