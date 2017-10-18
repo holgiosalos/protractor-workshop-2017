@@ -1,4 +1,4 @@
-import { $, ElementFinder } from 'protractor';
+import { $, element, by, ElementFinder } from 'protractor';
 
 export class ShippingStepPage {
   private get termsOfServiceCheckbox(): ElementFinder {
@@ -6,7 +6,7 @@ export class ShippingStepPage {
   }
 
   private get checkoutButton(): ElementFinder {
-    return $('#form > p > button > span');
+    return element(by.name('processCarrier'));
   }
 
   public async agreeTOSAndProceedToCheckout(): Promise<void> {
