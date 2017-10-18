@@ -59,7 +59,8 @@ describe('Given I open a shopping page', () => {
 
           it('then should be bought a t-shirt', async () => {
             const orderResume: OrderResumePage = new OrderResumePage();
-            await expect(orderResume.getPayoutResultTitle()).toBe('Your order on My Store is complete.');
+            await expect(orderResume.getPayoutResultTitle())
+              .toBe('Your order on My Store is complete.');
           });
         });
       });

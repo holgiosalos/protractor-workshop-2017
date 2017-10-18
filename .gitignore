@@ -64,6 +64,8 @@ typings/
 ## Typescript
 dist
 
+## Reports
+reports
 
 ### VisualStudioCode ###
 .vscode/*
